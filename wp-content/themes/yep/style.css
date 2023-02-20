@@ -54,3 +54,199 @@ table {
 	border-spacing: 0;
 }
 
+/********** POLICES ET COULEURS **********/
+
+:root{
+
+    /* Polices */
+
+    --main: 'Montserrat', sans-serif;
+    
+    /* Couleurs */
+
+    --black: #000000;
+    --white: #ffffff;
+    --lightblue: #4361ee;
+    --blue: #3a0ca3;
+    --darkblue: #081138;
+    --pink: #f62484;
+
+}
+
+/****************************** HTML ******************************/
+
+html{
+
+    font-family: var(--main);
+    font-size: 16px;
+}
+
+h1{
+
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h2{
+
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3{
+
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h4{
+
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/****************************** BODY ******************************/
+
+/********** CLASSES **********/
+
+.sr-only{
+
+    display: none;
+}
+
+/****************************** HEADER ******************************/
+
+header{
+
+    background-color: var(--darkblue);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+header > nav{
+
+    padding: 3vw 0;
+}
+
+header > nav > ul{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+header > nav > ul > li > a{
+
+    text-decoration: none;
+    color: var(--white);
+    text-transform: uppercase;
+}
+/******************** NAV ********************/
+
+/****************************** MAIN ******************************/
+
+/****************************** SECTIONS ******************************/
+
+main > section{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 3vw;
+}
+
+main > section > h2{
+
+    grid-column: 1/4;
+}
+
+
+/******************** SECTION - TITLE ********************/
+
+#title-section{
+    
+    background-image: url(assets/images/home-computer.jpeg);
+    grid-column-gap: 3vw;
+    grid-row-gap: 3vw;
+}
+
+#title-section > h1{
+    
+    color: var(--white);
+    grid-column: 1/4;
+}
+
+#title-section > h2{
+    
+    color: var(--pink);
+    grid-column: 1/4;
+}
+
+/******************** SECTION - ABOUT ********************/
+
+#about-section{
+    
+    background-color: var(--lightblue);
+    color: var(--white);
+    grid-row-gap: 3vw;
+}
+
+#about-section > p{
+
+    grid-column: 1/4;
+}
+
+/******************** SECTION - PROJECTS ********************/
+
+#projects-section{
+    
+    background-color: var(--white);
+    color: var(--lightblue);
+    grid-row-gap: 3vw;
+}
+
+#projects-section h3{
+    
+    color: var(--white);
+}
+
+#projects-section h4{
+    
+    color: var(--pink);
+}
+
+/******************** SECTION - CONTACT********************/
+
+#contact-section{
+    
+    background-color: var(--blue);
+    color: var(--white);
+    grid-row-gap: 3vw;
+}
+
+#contact-section > form{
+
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: .5vw;
+}
+
+#contact-section > form > fieldset{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: .5vw;
+}
+
+#contact-section > form > input{
+
+    background-color: var(--blue);
+    color: var(--white);
+    text-transform: uppercase;
+    border: solid var(--white) 1px;
+}
+/****************************** FOOTER ******************************/
