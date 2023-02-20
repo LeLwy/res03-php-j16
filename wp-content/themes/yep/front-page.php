@@ -22,7 +22,7 @@ $data = getHomepageData();
     <body>
         <header>
             <figure>
-                <img src="assets/images/Gaellan-Logo.svg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Gaellan-Logo.svg" alt="Logo : une version schématique d'un cerveau et ses connexions">
                 <figcaption class="sr-only">Logo du site</figcaption>
             </figure>
             <nav>
@@ -53,76 +53,23 @@ $data = getHomepageData();
             </section>
             <section id="projects-section">
                 <h2>mes derniers projets</h2>
-                <article>
-                    <section>
-                        <figure>
-                            <img src="assets/images/pharmacy.jpeg" alt="">
-                            <figcaption></figcaption>
-                        </figure>
-                        <h4>application santé</h4>
-                        <h3>Pharmacie de Maurepas</h3>
-                    </section>
-                </article>
-                <article>
-                    <section>
-                        <figure>
-                            <img src="assets/images/librairie.jpeg" alt="">
-                            <figcaption></figcaption>
-                        </figure>
-                        <h4>site e-commerce</h4>
-                        <h3>Librairie l'écume des jours</h3>
-                    </section>
-                </article>
-                <article>
-                    <section>
-                        <figure>
-                            <img src="assets/images/boulangerie.jpeg" alt="">
-                            <figcaption></figcaption>
-                        </figure>
-                        <h4>site vitrine</h4>
-                        <h3>Boulangerie Galtier</h3>
-                    </section>
-                </article>
-                <article>
-                    <section>
-                        <figure>
-                            <img src="assets/images/mairie.jpeg" alt="">
-                            <figcaption></figcaption>
-                        </figure>
-                        <h4>site institutionnel</h4>
-                        <h3>Mairie de Ploutruc</h3>
-                    </section>
-                </article>
-                <article>
-                    <section>
-                        <figure>
-                            <img src="assets/images/festival.jpeg" alt="">
-                            <figcaption></figcaption>
-                        </figure>
-                        <h4>site promotionnel</h4>
-                        <h3>Festival des choses</h3>
-                    </section>
-                </article>
+                <?php foreach($data["projets"] as $projet) { ?>  
+                    <article data-img="<?= $projet["image"]["url"] ?>">
+                        <section>
+                            <h4><?= $projet['category'] ?></h4>
+                            <h3><?= $projet['data']->post_title ?></h3>
+                        </section>
+                    </article>
+                <?php  
+                }  
+                ?>
             </section>
             <section id="contact-section">
-                <h2>me contacter</h2>
-                <form action="">
-                    <fieldset>
-                        <label for="user-name">prénom + nom *</label>
-                        <input type="text" name="name" id="user-name">
-                    </fieldset>
-                    <fieldset>
-                        <label for="user-email">email *</label>
-                        <input type="email" name="email" id="user-email">
-                    </fieldset>
-                    <fieldset>
-                        <label for="user-message">message</label>
-                        <input type="textarea" name="message" id="user-message">
-                    </fieldset>
-                    <input type="submit" value="envoyer">
-                </form>
+                <h2>Me contacter</h2>  
+                <?php echo do_shortcode("[contact-form-7 id='54' title='Contact-Accueil']"); ?> 
             </section>
         </main>
         <?php wp_footer(); ?>
+        <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
     </body>
 </html>

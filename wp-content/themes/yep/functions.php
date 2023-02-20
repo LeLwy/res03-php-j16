@@ -48,7 +48,7 @@ function getSubCategory($categories)
 function getProjects()
 {
     // preparing the request for the posts with the project category
-    $category_id = get_category_by_slug("projet")->term_id;
+    $category_id = get_category_by_slug("projets")->term_id;
     $args = [
         'numberposts' => 5,
         'category' => $category_id
@@ -71,3 +71,5 @@ function getProjects()
 
     return $projects;
 }
+
+add_filter('wpcf7_autop_or_not', '__return_false');

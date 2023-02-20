@@ -127,6 +127,11 @@ header{
     grid-template-columns: 1fr 9fr;
 }
 
+header > figure{
+
+    padding: 1vh;
+}
+
 header > nav{
 
     padding: 3vw 0;
@@ -206,16 +211,31 @@ main > section > h2{
     background-color: var(--white);
     color: var(--lightblue);
     grid-row-gap: 3vw;
+    grid-column-gap: 3vw;
+}
+
+#projects-section > article{
+
+    background-position: center center;
+    padding: 1vw;
+}
+
+#projects-section > article > section{
+
+    display: grid;
+    grid-template-rows: 6fr .5fr .5fr;
 }
 
 #projects-section h3{
     
     color: var(--white);
+    grid-row: 3/4;
 }
 
 #projects-section h4{
     
     color: var(--pink);
+    grid-row: 2/3;
 }
 
 /******************** SECTION - CONTACT********************/
@@ -227,26 +247,86 @@ main > section > h2{
     grid-row-gap: 3vw;
 }
 
-#contact-section > form{
+#contact-section > #wpcf7-f54-o1{
 
     grid-column: 2/3;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: .5vw;
 }
 
-#contact-section > form > fieldset{
+#contact-section > #wpcf7-f54-o1 > form{
 
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: .5vw;
+    display: flex;
+    flex-direction: column;
 }
 
-#contact-section > form > input{
+#contact-section > #wpcf7-f54-o1 > form > fieldset{
+
+    padding: 1vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#contact-section > #wpcf7-f54-o1 > form > fieldset > label{
+
+    margin-bottom: 1vh;
+}
+
+#contact-section > #wpcf7-f54-o1 > form > fieldset > span > input{
+
+    width: 100%;
+}
+
+#contact-section > #wpcf7-f54-o1 > form > fieldset > span > textarea{
+
+    width: 100%;
+}
+
+#contact-section > #wpcf7-f54-o1 > form > input{
 
     background-color: var(--blue);
     color: var(--white);
+    font-size: 1.2rem;
     text-transform: uppercase;
     border: solid var(--white) 1px;
+    padding: 1vh 1vw;
 }
 /****************************** FOOTER ******************************/
+
+
+/****************************** POST ******************************/
+
+#post >main{
+
+    padding: 0 10vw;
+    font-size: 12px;
+}
+
+#post h2{
+
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: var(--blue);
+    padding: 4vh 0 1vh 0;
+}
+
+#post figure{
+
+    display: flex;
+    justify-content: center;
+}
+
+#post figure > img{
+
+    width: 75%;
+}
+
+#post > main > h3{
+
+    text-transform: uppercase;
+    color: var(--lightblue);
+    font-size: 1.4rem;
+}
+
+#post > main > p{
+
+    padding: 2vh 0;
+}
